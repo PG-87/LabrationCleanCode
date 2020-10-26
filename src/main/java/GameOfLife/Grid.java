@@ -1,3 +1,5 @@
+package GameOfLife;
+
 import java.util.Arrays;
 
 public class Grid {
@@ -9,14 +11,18 @@ public class Grid {
                 {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
                 {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
                 {0, 0, 0, 1, 1, 1, 0, 0, 0, 0},
+                {0, 0, 0, 0, 1, 1, 0, 0, 0, 0},
                 {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
                 {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                {0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
                 {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
                 {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
                 {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
-        };;
+        };
+    }
+
+    public Grid(int gridSize){
+        this.grid = new int[gridSize][gridSize];
     }
 
     public Grid(int[][] grid){
@@ -29,6 +35,15 @@ public class Grid {
 
     public boolean compareGrids(Grid future) {
         return Arrays.deepEquals(grid, future.getGrid());
+    }
+
+    public int size() {
+        return grid.length;
+    }
+
+    public static boolean compareTwoGrids(Grid a, Grid b) {
+        return Arrays.deepEquals(a.getGrid(), b.getGrid());
+
     }
 }
 

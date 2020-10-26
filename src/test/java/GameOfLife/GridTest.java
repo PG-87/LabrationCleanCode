@@ -1,8 +1,9 @@
+package GameOfLife;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import static org.assertj.core.api.Assertions.*;
@@ -50,24 +51,5 @@ public class GridTest {
         Grid futureGrid = new Grid(testGrid);
 
         assertThat(grid.compareGrids(futureGrid)).isTrue();
-    }
-
-    @Test
-    void checkIfAllCellIsDeadAndGameOver() {
-        int[][] gameOverGrid = new int[][]{
-                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
-        };
-        Grid gameOver = new Grid(gameOverGrid);
-        int sum = Arrays.stream(gameOver.getGrid()).flatMapToInt(Arrays::stream).sum();
-        assertEquals(0, sum);
     }
 }
