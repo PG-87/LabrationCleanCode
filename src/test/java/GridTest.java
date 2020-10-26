@@ -4,8 +4,8 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.stream.IntStream;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.assertj.core.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class GridTest {
 
@@ -46,9 +46,8 @@ public class GridTest {
                 {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
                 {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
         };
-//        Grid testGrid = new Grid(testGrid);
+        Grid futureGrid = new Grid(testGrid);
 
-
-//        assertThat(grid.compareGrids(grid.getGrid(), testGrid).isTrue();
+        assertThat(grid.compareGrids(futureGrid)).isTrue();
     }
 }
