@@ -40,10 +40,10 @@ public class GridTest {
                 {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
                 {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
                 {0, 0, 0, 1, 1, 1, 0, 0, 0, 0},
+                {0, 0, 0, 0, 1, 1, 0, 0, 0, 0},
                 {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
                 {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                {0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
                 {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
                 {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
                 {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
@@ -51,5 +51,26 @@ public class GridTest {
         Grid futureGrid = new Grid(testGrid);
 
         assertThat(grid.compareGrids(futureGrid)).isTrue();
+    }
+
+    @Test
+    void checkThatTwoIncomingGridsAreDifferentAndReturnFalse() {
+        int[][] firstArray = new int[][]{
+                {0, 0, 0, 0, 0},
+                {0, 1, 1, 1, 0},
+                {0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0},
+        };
+        int[][] secondArray = new int[][]{
+                {0, 0, 0, 0, 0},
+                {0, 0, 1, 0, 0},
+                {0, 0, 1, 0, 0},
+                {0, 0, 1, 0, 0},
+                {0, 0, 0, 0, 0},
+        };
+        Grid firstGrid = new Grid(firstArray);
+        Grid secondGrid = new Grid(secondArray);
+        assertThat(grid.compareTwoGrids(firstGrid, secondGrid)).isFalse();
     }
 }

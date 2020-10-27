@@ -43,7 +43,6 @@ public class Grid {
 
     public static boolean compareTwoGrids(Grid a, Grid b) {
         return Arrays.deepEquals(a.getGrid(), b.getGrid());
-
     }
 }
 
