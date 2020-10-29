@@ -1,10 +1,9 @@
 package GameOfLife;
 
-public class Frontend {
+public class PrintGrid {
 
-    public void printGameBoard(Grid grid) {
+    public static void printGameBoard(Grid grid) {
         System.out.println("--------------------------------------------------------------------");
-        //       System.out.println("--------------------------------------------------------------------");
         for (int column = 0; column < grid.getGrid().length; column++) {
             for (int row = 0; row < grid.getGrid().length; row++) {
                 if (grid.getGrid()[column][row] == 0)
@@ -16,5 +15,4 @@ public class Frontend {
         }
         System.out.println();
     }
-
 }

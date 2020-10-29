@@ -16,7 +16,7 @@ public class GridTest {
     @BeforeEach
     void setup() {
         grid = new Grid();
-    }
+    }   
 
     @Test
     void checkGridForTwoDifferentCharacters() {
