@@ -66,10 +66,4 @@ public class GameOfLifeTest {
         assertEquals(0, allShouldBeDead);
     }
 
-//    @Test
-//    void checkHowManyNeighboursFirstCellInGridHasAndReturnSumOfNeighbours(){
-//        int aliveNeighbors = gameOfLife.getNeighbours
-//
-//        assertEquals(1, aliveNeighbors);
-//    }
 }

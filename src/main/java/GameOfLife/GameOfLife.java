@@ -34,7 +34,6 @@ public class GameOfLife {
         return cellLivesNextGen ? ALIVE : DEAD;
     }
 
-
     private boolean isCellAliveNextGen(boolean isAlive, int aliveNeighbors) {
         return isAlive ? willLivingCellSurvive(aliveNeighbors) : isCellBorn(aliveNeighbors);
     }
